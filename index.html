@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I’m Sorry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 40px;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        animation: fadeIn 2s ease;
+    }
+
+    h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 48px;
+        color: #ffd369;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #f1f1f1;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .quote {
+        font-style: italic;
+        color: #ffe9a0;
+        margin-top: 20px;
+        border-left: 4px solid #ffd369;
+        padding-left: 15px;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        background: #ffd369;
+        color: #2c2c2c;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 0 15px rgba(255, 211, 105, 0.6);
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(255, 211, 105, 1);
+    }
+
+    /* Floating stars */
+    .star {
+        position: absolute;
+        bottom: -20px;
+        font-size: 20px;
+        color: #ffd369;
+        text-shadow: 
+            0 0 5px #ffd369,
+            0 0 10px #ffd369,
+            0 0 20px #fff;
+        animation: floatUp 7s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) scale(0.8);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-120vh) scale(1.6);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>I’m Sorry ⭐</h1>
+    <p>
+        Hey Vanshika,<br><br>
+        I just wanna to say "sorry"!!!
+        Sometimes it took time to realise our mistakes and
+        I know I made a mistake and I truly regret it.
+        Hurting you was never my intention.
+        I just wanna prank on you that day that's it, but it won't work and took us in trouble!!!
+    </p>
+
+    <div class="quote">
+        “Even the darkest night has stars — just like every mistake has a chance to be forgiven.”
+    </div>
+
+    <button onclick="alert('There you gooooo, Thank you for forgiving me ⭐🤍')">
+        Forgive Me?
+    </button>
+</div>
+
+<script>
+    function createStar() {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.innerHTML = "⭐";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.fontSize = Math.random() * 18 + 14 + "px";
+        star.style.animationDuration = Math.random() * 3 + 5 + "s";
+
+        document.body.appendChild(star);
+
+        setTimeout(() => {
+            star.remove();
+        }, 8000);
+    }
+
+    setInterval(createStar, 350);
+</script>
+
+</body>
+</html>
